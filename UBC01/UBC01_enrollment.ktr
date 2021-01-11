@@ -1015,7 +1015,7 @@ case file to ensure we have a mapping between study and case.</note>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>H:\pentaho\UBC01\Inputs\Case_UBC01_Edited_CMW_200626.csv</filename>
+    <filename>H:\pentaho\UBC01\Inputs\Copy of Case_UBC01_finalized 08 07 2020 DWK2.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1328,6 +1328,17 @@ case file to ensure we have a mapping between study and case.</note>
         <trim_type>none</trim_type>
       </field>
       <field>
+        <name>Pathology Evaluation Detail Available</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
         <name>Supplementary Data Files</name>
         <type>String</type>
         <format/>
@@ -1558,7 +1569,7 @@ case file to ensure we have a mapping between study and case.</note>
         <nullif/>
         <trim_type>none</trim_type>
         <length>-1</length>
-        <precision>-1</precision>
+        <precision>1</precision>
       </field>
       <field>
         <name>date_of_birth</name>
@@ -1775,6 +1786,18 @@ case file to ensure we have a mapping between study and case.</note>
       </field>
       <field>
         <name>follow_up_data</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>pathology_report</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -2046,6 +2069,10 @@ case file to ensure we have a mapping between study and case.</note>
         <rename/>
       </field>
       <field>
+        <name>pathology_report</name>
+        <rename/>
+      </field>
+      <field>
         <name>output_directory</name>
         <rename/>
       </field>
@@ -2113,6 +2140,9 @@ case file to ensure we have a mapping between study and case.</note>
       </remove>
       <remove>
         <name>treatment_data</name>
+      </remove>
+      <remove>
+        <name>pathology_report</name>
       </remove>
       <remove>
         <name>output_directory</name>
@@ -2234,6 +2264,10 @@ case file to ensure we have a mapping between study and case.</note>
         <rename/>
       </field>
       <field>
+        <name>pathology_report</name>
+        <rename/>
+      </field>
+      <field>
         <name>output_directory</name>
         <rename/>
       </field>
@@ -2286,6 +2320,9 @@ case file to ensure we have a mapping between study and case.</note>
       </remove>
       <remove>
         <name>treatment_data</name>
+      </remove>
+      <remove>
+        <name>pathology_report</name>
       </remove>
       <remove>
         <name>output_directory</name>
@@ -2404,6 +2441,10 @@ case file to ensure we have a mapping between study and case.</note>
       </field>
       <field>
         <name>treatment_data</name>
+        <rename/>
+      </field>
+      <field>
+        <name>pathology_report</name>
         <rename/>
       </field>
       <field>
@@ -2574,6 +2615,10 @@ case file to ensure we have a mapping between study and case.</note>
         <rename/>
       </field>
       <field>
+        <name>pathology_report</name>
+        <rename/>
+      </field>
+      <field>
         <name>output_directory</name>
         <rename/>
       </field>
@@ -2638,6 +2683,9 @@ case file to ensure we have a mapping between study and case.</note>
       </remove>
       <remove>
         <name>treatment_data</name>
+      </remove>
+      <remove>
+        <name>pathology_report</name>
       </remove>
       <remove>
         <name>output_directory</name>
@@ -2785,6 +2833,10 @@ case file to ensure we have a mapping between study and case.</note>
       <field>
         <name>Treatment Outcome Available</name>
         <rename>treatment_data</rename>
+      </field>
+      <field>
+        <name>Pathology Evaluation Detail Available</name>
+        <rename>pathology_report</rename>
       </field>
       <field>
         <name>Supplementary Data Files</name>
