@@ -702,7 +702,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>H:\pentaho\UBC02\Inputs\Copy of UBC02 SAMPLE 02 19 21 FNL per DK.csv</filename>
+    <filename>H:\pentaho\UBC02\Inputs\UBC02 SAMPLE 02 24 21 FNL per DK.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
