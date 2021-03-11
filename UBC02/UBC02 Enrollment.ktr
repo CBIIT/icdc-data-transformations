@@ -437,11 +437,14 @@
   <notepads>
     <notepad>
       <note>We are ALWAYS adding study.clinical_study_designation to the
-case file to ensure we have a mapping between study and case.</note>
+case file to ensure we have a mapping between study and case.
+We also add cohort.cohort_id and study_arm.arm_id when 
+applicable, to ensure we have a mapping between study and 
+cohort, and study and arm.</note>
       <xloc>928</xloc>
       <yloc>112</yloc>
       <width>429</width>
-      <heigth>50</heigth>
+      <heigth>110</heigth>
       <fontname>Segoe UI</fontname>
       <fontsize>9</fontsize>
       <fontbold>N</fontbold>
@@ -466,6 +469,28 @@ in order to successfully append the streams.</note>
       <yloc>640</yloc>
       <width>325</width>
       <heigth>90</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>Currently we are creating is_primary_id values, 
+but not including them into the output file.</note>
+      <xloc>1120</xloc>
+      <yloc>624</yloc>
+      <width>318</width>
+      <heigth>50</heigth>
       <fontname>Segoe UI</fontname>
       <fontsize>9</fontsize>
       <fontbold>N</fontbold>
@@ -738,6 +763,36 @@ in order to successfully append the streams.</note>
       <field_a>study.clinical_study_designation</field_a>
       <field_b>separator</field_b>
       <field_c>patient_id</field_c>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>cohort.cohort_id</field_name>
+      <calc_type>ADD3</calc_type>
+      <field_a>study.clinical_study_designation</field_a>
+      <field_b>separator</field_b>
+      <field_c>cohort_description</field_c>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>study_arm.arm_id</field_name>
+      <calc_type>ADD3</calc_type>
+      <field_a>study.clinical_study_designation</field_a>
+      <field_b>separator</field_b>
+      <field_c>arm</field_c>
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
@@ -1882,7 +1937,7 @@ in order to successfully append the streams.</note>
         <precision>-1</precision>
       </field>
       <field>
-        <name>study_arm.arm</name>
+        <name>study_arm.arm_id</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -1894,7 +1949,7 @@ in order to successfully append the streams.</note>
         <precision>-1</precision>
       </field>
       <field>
-        <name>cohort.cohort_description</name>
+        <name>cohort.cohort_id</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -2529,18 +2584,6 @@ in order to successfully append the streams.</note>
         <length>-1</length>
         <precision>-1</precision>
       </field>
-      <field>
-        <name>is_primary_id</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -2759,6 +2802,7 @@ in order to successfully append the streams.</note>
     <fields>
       <field>
         <name>patient_id</name>
+        <rename/>
       </field>
       <field>
         <name>clinical_study_designation</name>
@@ -2766,92 +2810,119 @@ in order to successfully append the streams.</note>
       </field>
       <field>
         <name>arm</name>
-        <rename>study_arm.arm</rename>
+        <rename/>
       </field>
       <field>
         <name>cohort</name>
+        <rename/>
       </field>
       <field>
         <name>arm_cohort</name>
+        <rename/>
       </field>
       <field>
         <name>cohort_description</name>
-        <rename>cohort.cohort_description</rename>
+        <rename/>
       </field>
       <field>
         <name>breed</name>
+        <rename/>
       </field>
       <field>
         <name>sex</name>
+        <rename/>
       </field>
       <field>
         <name>neutered_indicator</name>
+        <rename/>
       </field>
       <field>
         <name>weight</name>
+        <rename/>
       </field>
       <field>
         <name>disease_term</name>
+        <rename/>
       </field>
       <field>
         <name>stage_of_disease</name>
+        <rename/>
       </field>
       <field>
         <name>primary_disease_site</name>
+        <rename/>
       </field>
       <field>
         <name>concurrent_disease</name>
+        <rename/>
       </field>
       <field>
         <name>concurrent_disease_type</name>
+        <rename/>
       </field>
       <field>
         <name>date_of_birth</name>
+        <rename/>
       </field>
       <field>
         <name>date_of_diagnosis</name>
+        <rename/>
       </field>
       <field>
         <name>site_short_name</name>
+        <rename/>
       </field>
       <field>
         <name>date_of_registration</name>
+        <rename/>
       </field>
       <field>
         <name>patient_age_at_enrollment</name>
+        <rename/>
       </field>
       <field>
         <name>best_response</name>
+        <rename/>
       </field>
       <field>
         <name>follow_up_data</name>
+        <rename/>
       </field>
       <field>
         <name>treatment_data</name>
+        <rename/>
       </field>
       <field>
         <name>pathology_report</name>
+        <rename/>
       </field>
       <field>
         <name>Alt Reg ID</name>
+        <rename/>
       </field>
       <field>
         <name>Alt Reg Origin</name>
+        <rename/>
       </field>
       <field>
         <name>case_output_file</name>
+        <rename/>
       </field>
       <field>
         <name>demographic_output_file</name>
+        <rename/>
       </field>
       <field>
         <name>enrollment_output_file</name>
+        <rename/>
       </field>
       <field>
         <name>diagnosis_output_file</name>
+        <rename/>
       </field>
       <field>
         <name>registration_output_file</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
       <remove>
